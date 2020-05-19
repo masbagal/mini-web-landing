@@ -42,11 +42,36 @@ export default function Slideshow({ items }) {
   return (
     <div>
       <animated.div className='overflow-hidden' {...bind()} >
-        <animated.div style={{ transform: x.interpolate((iX) => `translate3d(${iX}px, 0, 0)`) }} className='flex flex-row flex-no-wrap items-stretch'>
+        <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX * (80/100)}px)`) }} className='flex flex-row flex-no-wrap items-stretch pl-12'>
           {
             items.map((item, idx) => {
               const isActive = idx === activeIndex;
-              return <Slide {...item} isActive={isActive} />
+              const activeClass = isActive ? 'active' : '';
+              return (
+                <div className={`slideImageContainer ${activeClass}`}>
+                  <div className='galleryContainer shadow-xl'>
+                    <img src={item.img} className='object-cover object-center' />
+                  </div>
+                </div>
+              )
+            })
+          }
+        </animated.div>
+        <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX}px)`) }} className='flex flex-row flex-no-wrap items-stretch'>
+          {
+            items.map((item, idx) => {
+              const isActive = idx === activeIndex;
+              const activeClass = isActive ? 'active' : '';
+              return (
+                <div className='slideContainer'>
+                  <div className='slide'>
+                    <div className='mt-4 text-center'>
+                      <div className='slideTitle'>{item.title}</div>
+                      <div className='text-sm'>{item.content}</div>
+                    </div>
+                  </div>
+                </div>
+              )
             })
           }
         </animated.div>

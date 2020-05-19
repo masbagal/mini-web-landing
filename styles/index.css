@@ -7,7 +7,7 @@ body {
 
 * {
   font-family: 'Open Sans', sans-serif;
-  color: #434343;
+  color: #2f2f2f;
   @apply tracking-wide;
 }
 
@@ -27,16 +27,25 @@ body {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
 
-.slide {
+.slideContainer {
   width: 100%;
-  transition: all ease-in-out .2s;
-  opacity: 0.7;
-  will-change: opacity;
-  @apply flex-none px-12;
+  @apply flex-none;
 }
 
-.slide.active { 
+.slideImageContainer {
+  width: 85%;
+  opacity: 0.4;
+  will-change: opacity;
+  transition: opacity ease-in-out .4s;
+  @apply flex-none mr-6;
+}
+
+.slideImageContainer.active {
   opacity: 1;
+}
+
+.slide {
+  @apply flex-none px-12;
 }
 
 .slide.active:first-child {
@@ -92,7 +101,7 @@ body {
 }
 
 button {
-  @apply bg-red-500 text-white text-sm px-4 py-4  border rounded-full shadow-md my-2;
+  @apply bg-red-500 text-white text-sm px-4 py-4  rounded-full shadow-md my-2;
 }
 
 @tailwind utilities;
