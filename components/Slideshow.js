@@ -68,10 +68,10 @@ function Slide(props) {
   const activeClass = props.isActive ? 'active' : '';
   return (
       <div className={`slide ${activeClass}`}>
-        <div className='galleryContainer'>
+        <div className='galleryContainer shadow-lg'>
           <img src={props.img} className='object-cover object-center' />
         </div>
-        <div className='mt-2'>
+        <div className='mt-4'>
           <div className='slideTitle'>{props.title}</div>
           <div className='text-sm'>{props.content}</div>
         </div>
