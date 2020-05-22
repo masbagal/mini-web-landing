@@ -47,13 +47,13 @@ export default function IndexPage() {
       <Slideshow items={items} />
       <div className='mx-8 my-8 border-b-gray-300 border-b' />
 
-      <div className='flex flex-col px-8 mb-12'>
+      <div className='flex flex-col px-8 mb-12 buttonContainer'>
         <button onClick={() => toggleTray(true)}>Pesan Sekarang!</button>
         <a href='https://drive.google.com/file/d/1UWj_jNVD-5IRAn44UqWPVMgtWUQI-tQg/view' target='_blank'>
-          <button onClick={handleButton}>Download Proposal Kemitraan</button>
+          <button>Download Proposal Kemitraan</button>
         </a>
         <a href='https://api.whatsapp.com/send?phone=6287781742506&text=Saya%20tertarik%20untuk%20Franchise%20' target='_blank'>
-          <button onClick={handleButton}>Hubungi Kami</button>
+          <button>Hubungi Kami</button>
         </a>
       </div>
       <TrayModal isShow={showTray} handleClose={() => toggleTray(false)} />
