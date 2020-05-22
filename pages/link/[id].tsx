@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import TrayModal from "../../components/TrayModal";
 import Slideshow from "../../components/Slideshow";
 import MainLinkButton from "../../components/MainLinkButton";
@@ -33,6 +34,12 @@ export default function IndexPage(props: Props) {
 
   return (
     <div>
+      <Head>
+        <title>{props.title}</title>
+        <meta property="og:title" content={props.title} />
+        {props.logo && <meta property="og:image" content={props.logo} />}
+      </Head>
+
       <header className="header">
         {props.logo && <img src="/logo.png" className="logo" />}
         <h1 className="logoTitle">{props.title}</h1>
