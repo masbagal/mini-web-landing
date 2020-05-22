@@ -36,12 +36,16 @@ export default function TrayModal({ isShow = false, handleClose }) {
           <div className='text-sm'>Nikmatnya Makanan Tradisional Indonesia</div>
         </div>
         <div className='py-4 px-8'>
-          <div className='orderButton'>
-            <img src='/gofood.svg' width='50%' />
-          </div>
-          <div className='orderButton grab'>
-           <img src='/grabfood.svg'  width='50%' />
-          </div>
+          <a href='https://gofood.link/u/POQ7YA' target='_blank'>
+            <div className='orderButton'>
+                <img src='/gofood.svg' width='50%' />
+            </div>
+          </a>
+          <a href='https://food.grab.com/id/id/restaurant/nasi-kulit-syuurga-caturtunggal-delivery/IDGFSTI00003anh' target='_blank'>
+            <div className='orderButton grab'>
+            <img src='/grabfood.svg'  width='50%' />
+            </div>
+          </a>
         </div>
       </animated.div>
     </animated.div>

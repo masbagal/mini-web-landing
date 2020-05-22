@@ -49,20 +49,14 @@ export default function IndexPage() {
 
       <div className='flex flex-col px-8 mb-12'>
         <button onClick={() => toggleTray(true)}>Pesan Sekarang!</button>
-        <button onClick={handleButton}>Download Proposal Kemitraan</button>
-        <button onClick={handleButton}>Hubungi Kami</button>
+        <a href='https://drive.google.com/file/d/1UWj_jNVD-5IRAn44UqWPVMgtWUQI-tQg/view' target='_blank'>
+          <button onClick={handleButton}>Download Proposal Kemitraan</button>
+        </a>
+        <a href='https://api.whatsapp.com/send?phone=6287781742506&text=Saya%20tertarik%20untuk%20Franchise%20' target='_blank'>
+          <button onClick={handleButton}>Hubungi Kami</button>
+        </a>
       </div>
       <TrayModal isShow={showTray} handleClose={() => toggleTray(false)} />
-        
-        {/* <div className='slide'>
-          <div className='galleryContainer'>
-            <img src='/002.jpg' className='object-cover object-center' />
-          </div>
-          <div className='px-8 mt-2'>
-            <div className='slideTitle'>Peta Lokasi Nasi Kulit Syuurga</div>
-            <div>Persebaran nasi kulit syuurga di Indonesia , ada hingga 30 titik sementara di seluruh Indonesia</div> 
-          </div>
-        </div> */}
     </div>
     
   )
