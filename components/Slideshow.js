@@ -3,13 +3,7 @@ import debounce from 'lodash.debounce';
 import { useDrag } from 'react-use-gesture'
 import { animated, useSpring } from 'react-spring';
 
-import { SlideItem } from '../types';
-
-type Props = {
-  items: Array<SlideItem>
-}
-
-export default function Slideshow({ items }:Props) {
+export default function Slideshow({ items }) {
   const [windowWidth, setWindowWidth] = useState(0);
   const [currentX, setCurrentX] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -50,7 +44,7 @@ export default function Slideshow({ items }:Props) {
       <animated.div className='overflow-hidden' {...bind()} >
         <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX * (80/100)}px)`) }} className='flex flex-row flex-no-wrap items-stretch pl-12'>
           {
-            items.map((item: SlideItem, idx: number) => {
+            items.map((item, idx) => {
               const isActive = idx === activeIndex;
               const activeClass = isActive ? 'active' : '';
               return (
@@ -65,7 +59,7 @@ export default function Slideshow({ items }:Props) {
         </animated.div>
         <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX}px)`) }} className='flex flex-row flex-no-wrap items-stretch'>
           {
-            items.map((item: SlideItem, idx: number) => {
+            items.map((item, idx) => {
               return (
                 <div className='slideContainer' key={idx}>
                   <div className='slide'>
@@ -82,7 +76,7 @@ export default function Slideshow({ items }:Props) {
       </animated.div>
       <div className='mx-8 my-8 dotcontainer'>
         {
-          items.map((item: any, idx: number) => {
+          items.map((item, idx) => {
             const activeClass = idx === activeIndex ? 'active' : '';
             return <div className={`dotpage ${activeClass}`}  key={idx} />
           })
