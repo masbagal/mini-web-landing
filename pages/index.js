@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TrayModal from "../components/TrayModal";
 import Slideshow from "../components/Slideshow";
 import MainLinkButton from "../components/MainLinkButton";
+import TrayButton from "../components/TrayButton";
 
 export default function IndexPage() {
   const [showTray, toggleTray] = useState(false);
