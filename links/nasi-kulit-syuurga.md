@@ -1,5 +1,6 @@
 ---
 title: Nasi Kulit Syuurga
+logo: /logo.png
 gallery:
   - image: /nasi-kulit-syuurga/001.jpg
     title: Pioneer Nasi Kulit

@@ -9,6 +9,7 @@ import { SlideItem, ButtonLink } from "../../types";
 
 type Props = {
   id: string;
+  logo?: string;
   title: string;
   gallery: Array<SlideItem>;
   buttons: Array<ButtonLink>;
@@ -33,7 +34,7 @@ export default function IndexPage(props: Props) {
   return (
     <div>
       <header className="header">
-        <img src="/logo.png" className="logo" />
+        {props.logo && <img src="/logo.png" className="logo" />}
         <h1 className="logoTitle">{props.title}</h1>
       </header>
 
