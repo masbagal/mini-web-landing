@@ -13,27 +13,27 @@ export default function IndexPage() {
     {
       title: 'Pioneer Nasi Kulit',
       content: 'Nasi Kulit Syuurga merupakan pioneer nasi kulit ayam dengan paru di Indonesia yang berdiri sejak 2018, kami berupaya menjaga dan memajukan makanan tradisional Indonesia.',
-      img: '/001.jpg'
+      image: '/001.jpg'
     },
     {
       title: 'Lokasi Nasi Kulit Syuurga',
       content: 'Persebaran nasi kulit syuurga di Indonesia ada hingga 30 titik di seluruh Indonesia',
-      img: '/002.jpg'
+      image: '/002.jpg'
     },
     {
       title: 'Bermitra dengan Kami',
       content: 'Kenali kami dulu dari produk kami, agar kita memiliki visi yang sama membangun bersama.',
-      img: '/003.jpg'
+      image: '/003.jpg'
     },
     {
       title: 'Pioneer Nasi Kulit',
       content: 'Nasi Kulit Syuurga merupakan pioneer nasi kulit ayam dengan paru di Indonesia yang berdiri sejak 2018, kami berupaya menjaga dan memajukan makanan tradisional Indonesia.',
-      img: '/001.jpg'
+      image: '/001.jpg'
     },
     {
       title: 'Bermitra dengan Kami',
       content: 'Kenali kami dulu dari produk kami, agar kita memiliki visi yang sama membangun bersama.',
-      img: '/003.jpg'
+      image: '/003.jpg'
     },
   ]
 

@@ -108,8 +108,18 @@ button {
   @apply bg-red-500 text-white text-sm px-4 py-4  rounded-full shadow-md my-2;
 }
 
-.orderButton {
-  @apply p-4 shadow-md rounded-full my-4 px-8 py-4 text-center flex justify-center;
+.trayButton {
+  @apply p-4 shadow-lg rounded-lg my-4 py-4 text-center flex items-center bg-white;
+}
+
+.trayButton .logo {
+  @apply mr-4;
+  max-width: 40px;
+  object-fit: contain;
+}
+
+.trayButton .text {
+  @apply text-left text-sm;
 }
 
 .orderButton.grab {

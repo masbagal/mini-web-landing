@@ -3,7 +3,13 @@ import debounce from 'lodash.debounce';
 import { useDrag } from 'react-use-gesture'
 import { animated, useSpring } from 'react-spring';
 
-export default function Slideshow({ items }) {
+import { SlideItem } from '../types';
+
+type Props = {
+  items: Array<SlideItem>
+}
+
+export default function Slideshow({ items }:Props) {
   const [windowWidth, setWindowWidth] = useState(0);
   const [currentX, setCurrentX] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -44,13 +50,13 @@ export default function Slideshow({ items }) {
       <animated.div className='overflow-hidden' {...bind()} >
         <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX * (80/100)}px)`) }} className='flex flex-row flex-no-wrap items-stretch pl-12'>
           {
-            items.map((item, idx) => {
+            items.map((item: SlideItem, idx: number) => {
               const isActive = idx === activeIndex;
               const activeClass = isActive ? 'active' : '';
               return (
                 <div className={`slideImageContainer ${activeClass}`} key={idx}>
                   <div className='galleryContainer shadow-xl'>
-                    <img src={item.img} className='object-cover object-center' />
+                    <img src={item.image} className='object-cover object-center' />
                   </div>
                 </div>
               )
@@ -59,7 +65,7 @@ export default function Slideshow({ items }) {
         </animated.div>
         <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX}px)`) }} className='flex flex-row flex-no-wrap items-stretch'>
           {
-            items.map((item, idx) => {
+            items.map((item: SlideItem, idx: number) => {
               return (
                 <div className='slideContainer' key={idx}>
                   <div className='slide'>
@@ -76,7 +82,7 @@ export default function Slideshow({ items }) {
       </animated.div>
       <div className='mx-8 my-8 dotcontainer'>
         {
-          items.map((item, idx) => {
+          items.map((item: any, idx: number) => {
             const activeClass = idx === activeIndex ? 'active' : '';
             return <div className={`dotpage ${activeClass}`}  key={idx} />
           })
@@ -85,19 +91,3 @@ export default function Slideshow({ items }) {
     </div>
   )
 };
-
-
-function Slide(props) {
-  const activeClass = props.isActive ? 'active' : '';
-  return (
-      <div className={`slide ${activeClass}`}>
-        <div className='galleryContainer shadow-lg'>
-          <img src={props.img} className='object-cover object-center' />
-        </div>
-        <div className='mt-4'>
-          <div className='slideTitle'>{props.title}</div>
-          <div className='text-sm'>{props.content}</div>
-        </div>
-      </div>
-  )
-}
