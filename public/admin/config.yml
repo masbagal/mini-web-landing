@@ -7,7 +7,6 @@ collections:
     label: "Link Page"
     folder: "links"
     create: true
-    slug: { { slug } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Slide Show"
