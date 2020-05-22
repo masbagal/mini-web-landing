@@ -48,7 +48,7 @@ export default function Slideshow({ items }) {
               const isActive = idx === activeIndex;
               const activeClass = isActive ? 'active' : '';
               return (
-                <div className={`slideImageContainer ${activeClass}`}>
+                <div className={`slideImageContainer ${activeClass}`} key={idx}>
                   <div className='galleryContainer shadow-xl'>
                     <img src={item.img} className='object-cover object-center' />
                   </div>
@@ -60,10 +60,8 @@ export default function Slideshow({ items }) {
         <animated.div style={{ transform: x.interpolate((iX) => `translateX(${iX}px)`) }} className='flex flex-row flex-no-wrap items-stretch'>
           {
             items.map((item, idx) => {
-              const isActive = idx === activeIndex;
-              const activeClass = isActive ? 'active' : '';
               return (
-                <div className='slideContainer'>
+                <div className='slideContainer' key={idx}>
                   <div className='slide'>
                     <div className='mt-4 text-center'>
                       <div className='slideTitle'>{item.title}</div>
@@ -80,7 +78,7 @@ export default function Slideshow({ items }) {
         {
           items.map((item, idx) => {
             const activeClass = idx === activeIndex ? 'active' : '';
-            return <div className={`dotpage ${activeClass}`} />
+            return <div className={`dotpage ${activeClass}`}  key={idx} />
           })
         }
       </div>

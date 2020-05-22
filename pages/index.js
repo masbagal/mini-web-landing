@@ -1,7 +1,9 @@
-import Nav from '../components/nav'
+import React, { useState } from 'react';
+import TrayModal from '../components/TrayModal'
 import Slideshow from '../components/Slideshow';
 
 export default function IndexPage() {
+  const [showTray, toggleTray] = useState(false);
 
   function handleButton() {
     alert('Belum dibuat hehe')
@@ -46,10 +48,11 @@ export default function IndexPage() {
       <div className='mx-8 my-8 border-b-gray-300 border-b' />
 
       <div className='flex flex-col px-8 mb-12'>
-        <button onClick={handleButton}>Pesan Sekarang!</button>
+        <button onClick={() => toggleTray(true)}>Pesan Sekarang!</button>
         <button onClick={handleButton}>Download Proposal Kemitraan</button>
         <button onClick={handleButton}>Hubungi Kami</button>
       </div>
+      <TrayModal isShow={showTray} handleClose={() => toggleTray(false)} />
         
         {/* <div className='slide'>
           <div className='galleryContainer'>
