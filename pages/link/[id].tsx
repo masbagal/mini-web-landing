@@ -71,6 +71,7 @@ export default function IndexPage(props: Props) {
             key={button.link}
             href={button.link}
             text={button.text}
+            themeColor={props.themeColor}
           />
         ))}
       </div>
