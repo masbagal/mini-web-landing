@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import Head from "next/head";
+import isDarkColor from "is-dark-color";
 import TrayModal from "../../components/TrayModal";
 import Slideshow from "../../components/Slideshow";
 import MainLinkButton from "../../components/MainLinkButton";
@@ -11,6 +12,8 @@ import { SlideItem, ButtonLink } from "../../types";
 type Props = {
   id: string;
   logo?: string;
+  themeColor?: string;
+  themeTextColor?: string;
   title: string;
   gallery: Array<SlideItem>;
   buttons: Array<ButtonLink>;
@@ -18,6 +21,20 @@ type Props = {
 
 export default function IndexPage(props: Props) {
   const [showTray, toggleTray] = useState(false);
+
+  useLayoutEffect(() => {
+    const { themeTextColor } = props;
+    const root = document.documentElement;
+    const isBgDark = isDarkColor(props.themeColor);
+    const textColor = themeTextColor
+      ? themeTextColor
+      : isBgDark
+      ? "#ffffff"
+      : "#2f2f2f";
+    props.themeColor &&
+      root.style.setProperty("--theme-color", props.themeColor);
+    props.themeColor && root.style.setProperty("--theme-text-color", textColor);
+  });
 
   const TrayContent = [
     <TrayButton

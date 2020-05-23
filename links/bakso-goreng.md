@@ -1,5 +1,7 @@
 ---
-title: "Bakso Goreng "
+title: "Bakso Goreng"
+themeColor: "#22543D"
+themeTextColor: "#ffffff"
 gallery:
   - image: /img/076061000_1560857926-istock-686900976.jpg
     title: Bakso Pertama di Indonesia

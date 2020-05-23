@@ -1,6 +1,8 @@
 ---
 title: Nasi Kulit Syuurga
 logo: /logo.png
+themeColor: "#F56565"
+themeTextColor: "#FFFFFF"
 gallery:
   - image: /nasi-kulit-syuurga/001.jpg
     title: Pioneer Nasi Kulit
