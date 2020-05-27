@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import isDarkColor from "is-dark-color";
 import TrayModal from "../../components/TrayModal";
 import Slideshow from "../../components/Slideshow";
 import MainLinkButton from "../../components/MainLinkButton";
@@ -24,16 +23,6 @@ type Props = {
 export default function LinkPage(props: Props) {
   const [showTray, toggleTray] = useState(false);
 
-  useEffect(() => {
-    const { backgroundColor, textColor, accentColor, buttonTextColor } = props;
-    const root = document.documentElement;
-
-    root.style.setProperty("--bg-color", backgroundColor);
-    root.style.setProperty("--text-color", textColor);
-    root.style.setProperty("--accent-color", accentColor);
-    root.style.setProperty("--btn-text-color", buttonTextColor);
-  });
-
   const TrayContent = [
     <TrayButton
       key={1}
@@ -49,12 +38,23 @@ export default function LinkPage(props: Props) {
     />,
   ];
 
+  const { backgroundColor, textColor, accentColor, buttonTextColor } = props;
+  const themeScript = `
+    const root = document.documentElement;
+
+    root.style.setProperty("--bg-color", "${backgroundColor}");
+    root.style.setProperty("--text-color", "${textColor}");
+    root.style.setProperty("--accent-color", "${accentColor}");
+    root.style.setProperty("--btn-text-color", "${buttonTextColor}");
+  `;
+
   return (
     <div>
       <Head>
         <title>{props.title}</title>
         <meta property="og:title" content={props.title} />
         {props.logo && <meta property="og:image" content={props.logo} />}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>
 
       <header className="header">
