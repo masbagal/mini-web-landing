@@ -10,28 +10,56 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Theme Color"
-        name: themeColor
+
+      - label: "Logo"
+        name: logo
+        widget: "image"
+        hint: "Best using square logo"
+
+      - label: "Background Color"
+        name: backgroundColor
         widget: "string"
-        hint: "Theme color that will be applied to button and active pagination, defaults to light blue"
-        pattern:
-          [
-            "^#[0-9|A-F|a-f]{6}$",
-            "Should fill with valid color hex (# followed by 6 character)",
-          ]
-        default: "#63B3ED"
-        required: false
-      - label: "Theme Text Color"
-        name: themeTextColor
-        widget: "string"
-        hint: "Text color in the button. Sometimes you need it dark or light. If not specified will be automatically determined"
+        hint: "Background color for the page"
         pattern:
           [
             "^#[0-9|A-F|a-f]{6}$",
             "Should fill with valid color hex (# followed by 6 character)",
           ]
         default: "#ffffff"
-        required: false
+
+      - label: "Text Color"
+        name: textColor
+        widget: "string"
+        hint: "Text color for most of the text within the page"
+        pattern:
+          [
+            "^#[0-9|A-F|a-f]{6}$",
+            "Should fill with valid color hex (# followed by 6 character)",
+          ]
+        default: "#2f2f2f"
+
+      - label: "Accent Color"
+        name: accentColor
+        widget: "string"
+        hint: "Secondary color for accent. Will be used on button"
+        pattern:
+          [
+            "^#[0-9|A-F|a-f]{6}$",
+            "Should fill with valid color hex (# followed by 6 character)",
+          ]
+        default: "#035aa6"
+
+      - label: "Button Text Color"
+        name: buttonTextColor
+        widget: "string"
+        hint: "Text color in the button. Different from text color because it will be displayed over accent color"
+        pattern:
+          [
+            "^#[0-9|A-F|a-f]{6}$",
+            "Should fill with valid color hex (# followed by 6 character)",
+          ]
+        default: "#ffffff"
+
       - label: "Slide Show"
         name: "gallery"
         description: Link is a single page containing a product which have a gallery and CTA buttons

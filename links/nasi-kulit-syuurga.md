@@ -1,8 +1,10 @@
 ---
 title: Nasi Kulit Syuurga
 logo: /logo.png
-themeColor: "#F56565"
-themeTextColor: "#FFFFFF"
+backgroundColor: "#d63447"
+textColor: "#ffffff"
+accentColor: "#ffd31d"
+buttonTextColor: "#2f2f2f"
 gallery:
   - image: /nasi-kulit-syuurga/001.jpg
     title: Pioneer Nasi Kulit
@@ -15,7 +17,8 @@ gallery:
       seluruh Indonesia.
   - image: /nasi-kulit-syuurga/003.jpg
     title: Bermitra dengan Kami
-    content: Bergabunglah dengan kami dengan visi bersama membangun cita rasa lokal
+    content:
+      Bergabunglah dengan kami dengan visi bersama membangun cita rasa lokal
       di Indonesia.
 buttons:
   - text: Download Proposal Kemitraan

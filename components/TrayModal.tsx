@@ -36,13 +36,16 @@ export default function TrayModal(props: Props) {
   }
 
   return (
-    <animated.div className="fixed mx-auto inset-0" style={{ opacity, zIndex }}>
+    <animated.div
+      className="fixed mx-auto inset-0 tray"
+      style={{ opacity, zIndex }}
+    >
       <div
         className="bg-black opacity-75 w-screen h-screen"
         onClick={handleCloseTray}
       />
       <animated.div
-        className="bg-white w-full absolute bottom-0 rounded-lg"
+        className="tray-header"
         style={{
           transform: y.interpolate((iY: number) => `translateY(${iY}%)`),
         }}
@@ -51,7 +54,9 @@ export default function TrayModal(props: Props) {
           <div className="text-xl font-bold">{title}</div>
           <div className="text-sm">{subtitle}</div>
         </div>
-        <div className="py-2 px-6 bg-gray-200 pb-12">{content}</div>
+        <div className="py-2 px-6 bg-gray-200 pb-12 shadow-inner">
+          {content}
+        </div>
       </animated.div>
     </animated.div>
   );

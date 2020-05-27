@@ -55,15 +55,18 @@ export default function IndexPage() {
 
   return (
     <div>
-      <header className="header">
-        <img src="/logo.png" className="logo" />
-        <h1 className="logoTitle">Nasi Kulit Syuurga</h1>
-      </header>
+      <div className="heroContainer">
+        <div
+          className="heroImage"
+          style={{ backgroundImage: "url(/001.jpg)" }}
+        ></div>
+      </div>
 
-      <Slideshow items={items} />
-      <div className="mx-8 my-8 border-b-gray-300 border-b" />
+      <div className="flex flex-col px-8 mb-12 buttonContainer withHero">
+        <h1 className="logoTitle text-center mt-4 mb-8">
+          {"Nasi Kulit Syuurga"}
+        </h1>
 
-      <div className="flex flex-col px-8 mb-12 buttonContainer">
         <button onClick={() => toggleTray(true)}>Pesan Sekarang!</button>
         <MainLinkButton
           href="https://drive.google.com/file/d/1UWj_jNVD-5IRAn44UqWPVMgtWUQI-tQg/view"
