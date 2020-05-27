@@ -1,5 +1,6 @@
 ---
 title: Bakso Goreng
+logo: /img/logo-bakso-png.png
 backgroundColor: "#ffecc7"
 textColor: "#4d3e3e"
 accentColor: "#f5b971"
