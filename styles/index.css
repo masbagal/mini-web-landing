@@ -53,6 +53,10 @@ body {
   opacity: 1;
 }
 
+.translated-slide {
+  will-change: transform;
+}
+
 .slide {
   @apply flex-none px-12;
 }

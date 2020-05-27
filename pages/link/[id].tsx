@@ -21,7 +21,7 @@ type Props = {
   buttons: Array<ButtonLink>;
 };
 
-export default function IndexPage(props: Props) {
+export default function LinkPage(props: Props) {
   const [showTray, toggleTray] = useState(false);
 
   useEffect(() => {

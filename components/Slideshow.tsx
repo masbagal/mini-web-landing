@@ -60,14 +60,14 @@ export default function Slideshow({ items }: Props) {
 
   return (
     <div>
-      <animated.div className="overflow-hidden" {...bind()}>
+      <div className="overflow-hidden" {...bind()}>
         <animated.div
           style={{
             transform: x.interpolate(
               (iX) => `translateX(${iX * (80 / 100)}px)`
             ),
           }}
-          className="flex flex-row flex-no-wrap items-stretch pl-12"
+          className="flex flex-row flex-no-wrap items-stretch pl-12 translated-slide"
         >
           {items.map((item: SlideItem, idx: number) => {
             const isActive = idx === activeIndex;
@@ -86,7 +86,7 @@ export default function Slideshow({ items }: Props) {
         </animated.div>
         <animated.div
           style={{ transform: x.interpolate((iX) => `translateX(${iX}px)`) }}
-          className="flex flex-row flex-no-wrap items-stretch"
+          className="flex flex-row flex-no-wrap items-stretch translated-slide"
         >
           {items.map((item: SlideItem, idx: number) => {
             return (
@@ -101,7 +101,7 @@ export default function Slideshow({ items }: Props) {
             );
           })}
         </animated.div>
-      </animated.div>
+      </div>
       <div className="mx-8 my-8 dotcontainer">
         {items.map((item: any, idx: number) => {
           const activeClass = idx === activeIndex ? "active" : "";

@@ -42,11 +42,13 @@ export default function IndexPage() {
 
   const TrayContent = [
     <TrayButton
+      key={1}
       icon="/gofood.svg"
       href="https://gofood.link/u/POQ7YA"
       text="Pesan lewat Mamang GoFood"
     />,
     <TrayButton
+      key={2}
       icon="/grab.png"
       href="https://food.grab.com/id/id/restaurant/nasi-kulit-syuurga-caturtunggal-delivery/IDGFSTI00003anh"
       text="Pesan lewat Abang GrabFood"
