@@ -13,6 +13,17 @@ gallery:
     title: Tekstur yang Renyah
     content: Bakso kami dijamin renyah dan bertekstur, lebih krispi daripada
       bongkahan genteng
+trayButtons:
+  - trayTriggerText: Temukan Kami di Marketplace
+    trayTitle: Belanja yok belanjaa
+    traySubtitle: Belanja terus sampai seret bakso
+    buttons:
+      - icon: /img/tokprf.png
+        link: https://www.tokopedia.com/tokosijawir/bakso-goreng-ayam-kopong-bakso-enak-homemade
+        text: Tokopedia
+      - icon: /img/shopee.jpg
+        text: Di Shyopi pi pi pi pi pipi
+        link: https://shopee.co.id/Bakso-goreng-halal-i.18331861.4529235612
 buttons:
   - text: Beli Sekarang
     link: https://www.tokopedia.com
