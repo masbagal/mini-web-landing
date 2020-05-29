@@ -6,7 +6,7 @@ textColor: "#ffffff"
 accentColor: "#ffd31d"
 buttonTextColor: "#2f2f2f"
 gallery:
-  - image: /img/001.jpg
+  - image: /nasi-kulit-syuurga/001.jpg
     title: Pioneer Nasi Kulit
     content: Nasi Kulit Syuurga merupakan pioneer nasi kulit ayam dengan paru di
       Indonesia yang berdiri sejak 2018, kami berupaya menjaga dan memajukan
@@ -15,7 +15,7 @@ gallery:
     title: Lokasi Nasi Kulit Syuurga
     content: Persebaran nasi kulit syuurga di Indonesia ada hingga 30 titik di
       seluruh Indonesia.
-  - image: /img/003.jpg
+  - image: /nasi-kulit-syuurga/003.jpg
     title: Bermitra dengan Kami
     content:
       Bergabunglah dengan kami dengan visi bersama membangun cita rasa lokal
