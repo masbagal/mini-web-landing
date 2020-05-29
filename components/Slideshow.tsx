@@ -76,7 +76,7 @@ export default function Slideshow({ items }: Props) {
               <div className={`slideImageContainer ${activeClass}`} key={idx}>
                 <div className="galleryContainer shadow-xl">
                   <img
-                    src={`${item.image}?lqip`}
+                    src={item.image}
                     className="object-cover object-center min-h-full"
                   />
                 </div>
