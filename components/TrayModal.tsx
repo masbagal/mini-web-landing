@@ -34,6 +34,8 @@ export default function TrayModal(props: Props) {
     toggleTray(false);
   }
 
+  const { buttons = [] } = trayButton;
+
   return (
     <>
       <button onClick={() => toggleTray(true)}>
@@ -58,7 +60,7 @@ export default function TrayModal(props: Props) {
             <div className="text-sm">{trayButton.traySubtitle}</div>
           </div>
           <div className="py-2 px-6 bg-gray-200 pb-12 shadow-inner">
-            {trayButton.buttons.map((button: ButtonsInsideTray) => (
+            {buttons.map((button: ButtonsInsideTray) => (
               <TrayButton
                 key={button.text + button.link}
                 icon={button.icon}

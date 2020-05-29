@@ -31,6 +31,8 @@ export default function LinkPage(props: Props) {
     root.style.setProperty("--btn-text-color", "${buttonTextColor}");
   `;
 
+  const { trayButtons = [], buttons = [] } = props;
+
   return (
     <div>
       <Head>
@@ -48,11 +50,10 @@ export default function LinkPage(props: Props) {
       <Slideshow items={props.gallery} />
       <div className="slideshow-border" />
       <div className="flex flex-col px-8 mb-12 buttonContainer">
-        {/* <pre>{JSON.stringify(props.trayButtons, null, 2)}</pre> */}
-        {props.trayButtons.map((tb: TrayButtons) => (
+        {trayButtons.map((tb: TrayButtons) => (
           <TrayModal trayButton={tb} key={tb.trayTriggerText} />
         ))}
-        {props.buttons.map((button: ButtonLink) => (
+        {buttons.map((button: ButtonLink) => (
           <MainLinkButton
             key={button.link}
             href={button.link}
