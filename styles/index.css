@@ -75,13 +75,13 @@ body {
 }
 
 .heroContainer {
-  height: 75vh;
+  height: 65vh;
   z-index: -1;
   @apply relative overflow-hidden;
 }
 
 .heroImage {
-  height: 75vh;
+  height: 65vh;
   @apply bg-cover bg-center w-full fixed top-0 left-0;
 }
 
