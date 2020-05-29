@@ -68,8 +68,37 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: "Image Title", name: title, widget: string }
           - { label: "Image Description", name: content, widget: text }
+
+      - label: "Button With Tray List"
+        name: "trayButtons"
+        description: Button that will open a tray that contains more link
+        widget: list
+        fields:
+          - label: Button Text
+            name: trayTriggerText
+            widget: string
+          - label: Tray Title
+            name: trayTitle
+            widget: string
+          - label: Tray Subtitle
+            name: traySubtitle
+            widget: string
+          - label: Tray Buttons
+            name: buttons
+            widget: "list"
+            fields:
+              - {
+                  label: "Button Icon",
+                  name: icon,
+                  widget: image,
+                  hint: Please use existing image if there's any (e.g.),
+                }
+              - { label: "Button Text", name: text, widget: string }
+              - { label: "Button URL", name: link, widget: string }
+
       - label: "Button List"
         name: "buttons"
+        description: Button that contains url and clickable to external link
         widget: list
         fields:
           - { label: "Button Text", name: text, widget: string }

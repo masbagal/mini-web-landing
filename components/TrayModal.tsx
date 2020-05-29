@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import TrayButton from "./TrayButton";
+
+import { TrayButtons, ButtonsInsideTray } from "../types";
 
 const showSpringConst = [
   { opacity: 0, y: 100, zIndex: 100 },
@@ -13,18 +15,15 @@ const hideSpringConst = [
 ];
 
 type Props = {
-  isShow: boolean;
-  handleClose: () => void;
-  title: string;
-  subtitle: string;
-  content: React.ReactElement | any;
+  trayButton: TrayButtons;
 };
 
 export default function TrayModal(props: Props) {
-  const { isShow, handleClose, title, subtitle, content } = props;
+  const { trayButton } = props;
+  const [showTray, toggleTray] = useState(false);
   // @ts-ignore
   const { opacity, y, zIndex } = useSpring({
-    to: isShow ? showSpringConst : hideSpringConst,
+    to: showTray ? showSpringConst : hideSpringConst,
     from: { opacity: 0, y: 100, zIndex: -1 },
     config: {
       duration: 120,
@@ -32,32 +31,44 @@ export default function TrayModal(props: Props) {
   });
 
   function handleCloseTray() {
-    handleClose && handleClose();
+    toggleTray(false);
   }
 
   return (
-    <animated.div
-      className="fixed mx-auto inset-0 tray"
-      style={{ opacity, zIndex }}
-    >
-      <div
-        className="bg-black opacity-75 w-screen h-screen"
-        onClick={handleCloseTray}
-      />
+    <>
+      <button onClick={() => toggleTray(true)}>
+        {trayButton.trayTriggerText}
+      </button>
       <animated.div
-        className="tray-header"
-        style={{
-          transform: y.interpolate((iY: number) => `translateY(${iY}%)`),
-        }}
+        className="fixed mx-auto inset-0 tray"
+        style={{ opacity, zIndex }}
       >
-        <div className="p-4 border-b text-center">
-          <div className="text-xl font-bold">{title}</div>
-          <div className="text-sm">{subtitle}</div>
-        </div>
-        <div className="py-2 px-6 bg-gray-200 pb-12 shadow-inner">
-          {content}
-        </div>
+        <div
+          className="bg-black opacity-75 w-screen h-screen"
+          onClick={handleCloseTray}
+        />
+        <animated.div
+          className="tray-header"
+          style={{
+            transform: y.interpolate((iY: number) => `translateY(${iY}%)`),
+          }}
+        >
+          <div className="p-4 border-b text-center">
+            <div className="text-xl font-bold">{trayButton.trayTitle}</div>
+            <div className="text-sm">{trayButton.traySubtitle}</div>
+          </div>
+          <div className="py-2 px-6 bg-gray-200 pb-12 shadow-inner">
+            {trayButton.buttons.map((button: ButtonsInsideTray) => (
+              <TrayButton
+                key={button.text + button.link}
+                icon={button.icon}
+                href={button.link}
+                text={button.text}
+              />
+            ))}
+          </div>
+        </animated.div>
       </animated.div>
-    </animated.div>
+    </>
   );
 }

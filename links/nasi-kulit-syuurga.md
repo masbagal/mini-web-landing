@@ -20,6 +20,17 @@ gallery:
     content:
       Bergabunglah dengan kami dengan visi bersama membangun cita rasa lokal
       di Indonesia.
+trayButtons:
+  - trayTriggerText: "Pesan Sekarang Yoooo!"
+    trayTitle: "Pesan Sekarang!"
+    traySubtitle: Rasakan nikmatnya cita rasa Indonesia
+    buttons:
+      - text: Pesan lewat Mamang GoFood
+        icon: "/gofood.svg"
+        link: https://gofood.link/u/POQ7YA
+      - text: Pesan lewat Abang Grab
+        icon: "/grab.png"
+        link: https://food.grab.com/id/id/restaurant/nasi-kulit-syuurga-caturtunggal-delivery/IDGFSTI00003anh
 buttons:
   - text: Download Proposal Kemitraan
     link: https://drive.google.com/file/d/1UWj_jNVD-5IRAn44UqWPVMgtWUQI-tQg/view
